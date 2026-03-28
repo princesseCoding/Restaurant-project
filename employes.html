@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<title>Gestion Employés</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="p-4">
+
+<h2>Gestion des employés</h2>
+
+<button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
+Ajouter
+</button>
+
+<table class="table table-bordered table-striped">
+<thead class="table-dark">
+<tr>
+<th>Matricule</th>
+<th>Prénom</th>
+<th>Nom</th>
+<th>Adresse</th>
+<th>Service</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="tableBody"></tbody>
+</table>
+
+<!-- MODAL AJOUT -->
+<div class="modal fade" id="addModal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+<div class="modal-header">
+<h5>Ajouter employé</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+
+<input id="prenom" class="form-control mb-1" placeholder="Prénom *">
+<div id="errPrenom" class="text-danger"></div>
+
+<input id="nom" class="form-control mb-1" placeholder="Nom *">
+<div id="errNom" class="text-danger"></div>
+
+<input id="adresse" class="form-control mb-1" placeholder="Adresse *">
+<div id="errAdresse" class="text-danger"></div>
+
+<select id="service" class="form-control mb-1">
+<option value="">Choisir un service *</option>
+<option>Cuisine</option>
+<option>Service</option>
+<option>Caissier</option>
+<option>Manager</option>
+</select>
+<div id="errService" class="text-danger"></div>
+
+</div>
+
+<div class="modal-footer">
+<button class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+<button class="btn btn-success" onclick="addEmployee()">Enregistrer</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- MODAL SUPPRESSION -->
+<div class="modal fade" id="confirmModal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+<div class="modal-header">
+<h5>Confirmation</h5>
+</div>
+
+<div class="modal-body">
+Voulez-vous supprimer cet employé ?
+</div>
+
+<div class="modal-footer">
+<button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+<button class="btn btn-danger" onclick="confirmDelete()">OK</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- TOAST -->
+<div class="toast position-fixed bottom-0 end-0 m-3" id="toast">
+<div class="toast-body text-white bg-success"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- IMPORTANT -->
+<script src="script.js"></script>
+
+</body>
+</html>

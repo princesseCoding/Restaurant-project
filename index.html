@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Saveur</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<div class="logo">
+<img src="images/logo.jpg">
+<span>Restaurant Saveur</span>
+</div>
+
+<ul class="nav-links">
+<li><a href="#">Accueil</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#reservation">Réservation</a></li>
+<li><a href="#galerie">Galerie</a></li>
+<li><a href="#temoignages">Témoignages</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HEADER -->
+<header class="hero">
+<div class="hero-content">
+<h1>Restaurant Saveur</h1>
+<p class="slogan">Une expérience culinaire inoubliable</p>
+<a href="#reservation" class="btn">Réserver une table</a>
+</div>
+</header>
+
+<!-- MENU -->
+<section id="menu">
+<h2>Notre Menu</h2>
+
+<div class="menu-container">
+
+<div class="plat" onclick="showDetails('Burger classique','Burger avec steak grillé et sauce spéciale','12€','images/burger1.jpg')">
+<img src="images/burger1.jpg">
+<h3>Burger classique</h3>
+<p>12€</p>
+<button class="btn">Commander</button>
+</div>
+
+<div class="plat" onclick="showDetails('Burger gourmet','Burger double steak et fromage','14€','images/burger2.jpg')">
+<img src="images/burger2.jpg">
+<h3>Burger gourmet</h3>
+<p>14€</p>
+<button class="btn">Commander</button>
+</div>
+
+<div class="plat" onclick="showDetails('Pizza maison','Pizza croustillante avec mozzarella','15€','images/pizza.jpg')">
+<img src="images/pizza.jpg">
+<h3>Pizza maison</h3>
+<p>15€</p>
+<button class="btn">Commander</button>
+</div>
+
+<div class="plat" onclick="showDetails('Burger poulet','Burger poulet croustillant','13€','images/burger3.jpg')">
+<img src="images/burger3.jpg">
+<h3>Burger poulet</h3>
+<p>13€</p>
+<button class="btn">Commander</button>
+</div>
+
+<div class="plat" onclick="showDetails('Hot Dog','Hot dog avec saucisse grillée','9€','images/hotdog.jpg')">
+<img src="images/hotdog.jpg">
+<h3>Hot Dog</h3>
+<p>9€</p>
+<button class="btn">Commander</button>
+</div>
+
+<div class="plat" onclick="showDetails('Tacos','Tacos garni avec viande et fromage','11€','images/tacos.jpg')">
+<img src="images/tacos.jpg">
+<h3>Tacos</h3>
+<p>11€</p>
+<button class="btn">Commander</button>
+</div>
+<div class="plat" onclick="showDetails('nuggetpoulet','Nuggets de poulet frits','5€','images/nugget.jpg')">
+<img src="images/Nuggetpoulet.jpg">
+<h3>Nuggets de poulet</h3>
+<p>7€</p>
+<button class="btn">Commander</button>
+</div>
+<div class="plat" onclick="showDetails('chawarma','Frites croustillantes','4€','images/frites.jpg')">
+<img src="images/chawarma.jpg">
+<h3>Chawarma</h3>
+<p>4€</p>
+<button class="btn">Commander</button>
+</div>
+</div>
+
+<button class="btn" onclick="openPopup()">Voir menus spéciaux</button>
+
+</section>
+
+<!-- POPUP MENU SPECIAL -->
+<div id="popup" class="popup">
+<div class="popup-content">
+<span class="close" onclick="closePopup()">X</span>
+
+<h2>Menus spéciaux</h2>
+
+<button class="btn" onclick="showCategory('boissons')">Boissons</button>
+<button class="btn" onclick="showCategory('desserts')">Desserts</button>
+<button class="btn" onclick="showCategory('menus')">Menus</button>
+
+<div id="categoryContent"></div>
+
+</div>
+</div>
+
+<!-- POPUP DETAILS -->
+<div id="detailsPopup" class="popup">
+<div class="popup-content">
+
+<span class="close" onclick="closeDetails()">X</span>
+
+<img id="platImage" style="width:200px;border-radius:10px;margin-bottom:10px">
+
+<h2 id="platTitre"></h2>
+<p id="platDescription"></p>
+<p id="platPrix"></p>
+
+<button class="btn">Commander</button>
+
+</div>
+</div>
+
+<!-- GALERIE -->
+<section id="galerie">
+<h2>Galerie</h2>
+
+<div class="galerie">
+<img src="images/burger7.jpg">
+<img src="images/cliente1.jpg">
+<img src="images/lesemployes.jpg">
+<img src="images/employees3.jpg">
+<img src="images/donut.jpg">
+<img src="images/client3.jpg">
+.jpg">
+</div>
+
+</section>
+
+<!-- RESERVATION -->
+<section id="reservation">
+<h2>Réserver une table</h2>
+
+<form>
+<input type="text" placeholder="Nom et prénom" required>
+<input type="datetime-local" required>
+<input type="number" placeholder="Nombre de personnes" required>
+<input type="tel" placeholder="Téléphone" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Demandes spéciales"></textarea>
+<button type="submit">Réserver</button>
+</form>
+
+</section>
+
+<!-- TEMOIGNAGES -->
+<section id="temoignages">
+<h2>Témoignages</h2>
+
+<div class="temoignages-container">
+
+<div class="testimonial">
+<img src="images/cliente1.jpg">
+<p>"Restaurant incroyable !"</p>
+<h4>Badou Ndiaye</h4>
+</div>
+
+<div class="testimonial">
+<img src="images/cliente2.jpg">
+<p>"Les plats sont délicieux."</p>
+<h4>Alicia Keys</h4>
+</div>
+
+<div class="testimonial">
+<img src="images/client3.jpg">
+<p>"Je recommande fortement."</p>
+<h4>Aminata Fall</h4>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+
+<p>Adresse : Dakar, Sénégal</p>
+<p>Téléphone : <a href="tel:+221771234567">+221771234567</a></p>
+<p>Email : <a href="mailto:restaurant@email.com">restaurant@email.com</a></p>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-section">
+<h3>Restaurant Saveur</h3>
+<p>Le meilleur fast-food à Dakar.</p>
+</div>
+
+<div class="footer-section">
+<h3>Liens utiles</h3>
+<ul>
+<li><a href="#">Accueil</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#reservation">Réservation</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>Réseaux sociaux</h3>
+<a href="#">Facebook</a><br>
+<a href="#">Instagram</a><br>
+<a href="#">Twitter</a>
+</div>
+
+<div class="footer-section">
+<h3>Informations</h3>
+<a href="#">Mentions légales</a><br>
+<a href="#">Politique de confidentialité</a>
+</div>
+
+</div>
+
+<p class="copyright">© 2026 Restaurant Saveur</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
